@@ -5,4 +5,4 @@ Repositório para estudos DIO
 - Criação do repositório
 
 ## Potência Tech powered by iFood | Ciências de Dados com Python
-- Dominando o Python para Ciência de Dados: Sistema Bancário
+- Dominando o Python para Ciência de Dados: Sistema Bancário v1 e v2
