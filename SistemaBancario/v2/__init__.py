@@ -1,5 +1,17 @@
+def depositar(saldo, valor, extrato):
+    ...
+
+def sacar(saldo, valor, extrato, limite, numero_saques,limite_saques):
+    ...
+
+def extrato(saldo, extrato):
+    ...
+
+def criarUsuario():
+    ...
+
+def criarConta():
+    ...
+
 def main_v2():
-    print("########################################")
-    print("### Bem-vindo ao Sistema Bancário V2 ###")
-    print("########################################")
-    print("Em desenvolvimento...")
+    ...
