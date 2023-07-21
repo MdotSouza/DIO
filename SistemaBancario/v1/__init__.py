@@ -15,7 +15,7 @@ def main_v1():
     TEXTO_DEP = "Digite o valor do depósito: R$"
     TEXTO_SAQ = "Digite o valor do saque: R$"
     saldo, saque, deposito = 0.0, 0.0, 0.0
-    contSaques = 1
+    contSaques = 0
     textoExtrato = ""
 
     while(True):
