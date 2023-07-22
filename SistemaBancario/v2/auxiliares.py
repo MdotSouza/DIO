@@ -29,10 +29,13 @@ def verificarEntrada(entrada):
        return "erro"
     return float(entrada)
 
-#FUNÇÃO PARA LISTAR USUARIOS
-def listarUsuarios():
-    ...
+#FUNÇÃO PARA GERAR ID DE CONTA
+def gerarNumConta():
+    contador = 1
+    while (True):
+        yield contador
+        contador += 1
 
-#FUNÇÃO PARA LISTAR CONTAS
-def listarContas():
-    ...
+def verificarCliente(cpf, lista_clientes):
+    cliente = [cliente for cliente in lista_clientes if cliente["cpf"] == cpf]
+    return cliente[0] if cliente else None
