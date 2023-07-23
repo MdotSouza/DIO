@@ -7,7 +7,7 @@ Repositório para estudos da plataforma DIO
 ## Potência Tech powered by iFood | Ciências de Dados com Python
 - Contribuindo em um Projeto Open Source no GitHub
 
-  1 - Fork do repositótio dio-lab-open-source
+  1 - Fork do repositório dio-lab-open-source
   
 - Dominando o Python para Ciência de Dados:
 
