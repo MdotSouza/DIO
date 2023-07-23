@@ -1,12 +1,12 @@
 #FUNÇÃO PARA MONTAR MENU
 def criarMenu():
     TEXTO_MENU = """Selecione a opção:
-1 - Criar Usuário
+1 - Criar Cliente
 2 - Criar Conta
 3 - Depósito
 4 - Saque
 5 - Visualizar Extrato
-6 - Listar Usuários
+6 - Listar Clientes
 7 - Listar Contas
 0 - Sair
 """

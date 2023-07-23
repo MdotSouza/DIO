@@ -1,6 +1,9 @@
-from auxiliares import criarMenu, verificarEntrada, verificarCliente
-from cadastros import criarCliente, criarConta, listarClientes, listarContas
-from operacoes import depositar, sacar, visualizarExtrato
+import os
+import sys
+sys.path.insert(0, os.getcwd())
+from SistemaBancario.v2.operacoes import depositar, sacar, visualizarExtrato
+from SistemaBancario.v2.auxiliares import criarMenu, verificarEntrada, verificarCliente
+from SistemaBancario.v2.cadastros import criarCliente, criarConta, listarClientes, listarContas
 
 
 def main_v2():
@@ -29,19 +32,17 @@ def main_v2():
             cpf = input("Informe o CPF (somente números): ").replace(".","").replace("-","")
             cliente = verificarCliente(cpf, clientes)
             if cliente:
-                print(cliente)
                 print("Cliente já cadastrado.")
             else:
-                print(cliente)
                 nome = input("Informe o nome: ")
                 dataNascimento = input("Informe a data de nascimemnto(dd-mm-aaaa): ")
-                endereco = input("Informe o endereço (logradouro - nro - bairro - ): ")
+                endereco = input("Informe o endereço (logradouro, nro - bairro - cidade/uf): ")
                 
-                clientes.append(criarCliente(nome, dataNascimento, cpf, endereco))
+                clientes.append(criarCliente(nome, cpf, dataNascimento, endereco))
                 print("Cliente criado com sucesso!")
 
         elif opcao == 2:
-            cpf = input("Informe o CPF (somente números): ").replace(".","").replace("-","")
+            cpf = input("Informe o CPF do cliente (somente números): ").replace(".","").replace("-","")
             cliente = verificarCliente(cpf, clientes)
 
             if not cliente:
@@ -59,11 +60,11 @@ def main_v2():
             saque = input("Digite o valor do saque: R$").replace(",",".")
             saque =  verificarEntrada(saque)      
             saldo, extrato, numeroSaques = sacar(saldo= saldo,
-                                                valor= saque,
-                                                extrato= extrato,
-                                                limite= LIMITE,
-                                                numero_saques= numeroSaques,
-                                                limite_saques= LIMITE_SAQUES)
+                                                 valor= saque,
+                                                 extrato= extrato,
+                                                 limite= LIMITE,
+                                                 numero_saques= numeroSaques,
+                                                 limite_saques= LIMITE_SAQUES)
         
         elif opcao == 5:
             consulta = visualizarExtrato(saldo, extrato= extrato)
@@ -76,5 +77,3 @@ def main_v2():
             print(consulta)
             
         print("*" * 42)
-
-main_v2()

@@ -1,4 +1,7 @@
-from auxiliares import gerarNumConta
+import os
+import sys
+sys.path.insert(0, os.getcwd())
+from SistemaBancario.v2.auxiliares import gerarNumConta
 
 #FUNÇÃO PARA CRIAR USUÁRIO
 def criarCliente(nome, cpf, data_nascimento, endereco):
@@ -36,7 +39,7 @@ def listarContas(lista_contas):
     if lista_contas: 
         retorno = "======= LISTA DE CONTAS =======\n"
         for conta in lista_contas:
-            retorno += f"""AGÊNCIA:\t{conta["nome"]}
+            retorno += f"""AGÊNCIA:\t{conta["agencia"]}
 CONTA:\t{conta["agencia"]}
 TITULAR:\t{conta["cliente"]["nome"]}
 CPF DO TITULAR:\t{conta["cliente"]["cpf"]}
