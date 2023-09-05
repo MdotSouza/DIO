@@ -3,7 +3,7 @@ use ecommerce;
 
 show tables;
 -- idClient, Fname, Minit, Lname, CPF, Address
-insert into Clients (Fname, Minit, Lname, CPF, Address) 
+insert into clients (Fname, Minit, Lname, CPF, Address) 
 	   values('Maria','M','Silva', 12346789, 'rua silva de prata 29, Carangola - Cidade das flores'),
 		     ('Matheus','O','Pimentel', 987654321,'rua alemeda 289, Centro - Cidade das flores'),
 			 ('Ricardo','F','Silva', 45678913,'avenida alemeda vinha 1009, Centro - Cidade das flores'),

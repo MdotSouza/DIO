@@ -31,7 +31,6 @@ create table product(
 
 alter table product auto_increment=1;
 
-
 -- para ser continuado no desafio: termine de implementar a tabela e crie a conexão com as tabelas necessárias
 -- além disso, reflita essa modificação no diagrama de esquema relacional
 -- criar constraints relacionadas ao pagamento
@@ -43,7 +42,6 @@ create table payments(
     limitAvailable float,
     primary key(idClient, idPayment)
 );
-
 
 -- criar tabela pedido
 -- drop table orders;
@@ -59,7 +57,7 @@ create table orders(
 );
 alter table orders auto_increment=1;
 
-desc orders;
+-- desc orders;
 
 -- criar tabela estoque
 create table productStorage(
@@ -67,8 +65,8 @@ create table productStorage(
     storageLocation varchar(255),
     quantity int default 0
 );
-alter table productStorage auto_increment=1;
 
+alter table productStorage auto_increment=1;
 
 -- criar tabela fornecedor
 create table supplier(
@@ -80,7 +78,7 @@ create table supplier(
 );
 alter table supplier auto_increment=1;
 
-desc supplier;
+-- desc supplier;
 
 -- criar tabela vendedor
 create table seller(
@@ -109,7 +107,7 @@ create table productSeller(
     constraint fk_product_product foreign key (idPproduct) references product(idProduct)
 );
 
-desc productSeller;
+-- desc productSeller;
 
 create table productOrder(
 	idPOproduct int,
@@ -140,12 +138,13 @@ create table productSupplier(
     constraint fk_product_supplier_prodcut foreign key (idPsProduct) references product(idProduct)
 );
 
-desc productSupplier;
+ 
+-- desc productSupplier;
 
 show tables;
 
 show databases;
-use information_schema;
-show tables;
-desc referential_constraints;
-select * from referential_constraints where constraint_schema = 'ecommerce';
+-- use information_schema;
+-- show tables;
+-- desc referential_constraints;
+-- select * from referential_constraints where constraint_schema = 'ecommerce';
