@@ -1,5 +1,5 @@
-create database ecommerce;
-use ecommerce;
+create database ecommerceV1;
+use ecommerceV1;
 
 create table clients(
 		idClient int auto_increment primary key,
@@ -10,7 +10,6 @@ create table clients(
         Address varchar(255),
         constraint unique_cpf_client unique (CPF)
 );
-
 alter table clients auto_increment=1;
 
 create table product(
@@ -21,7 +20,6 @@ create table product(
         avaliação float default 0,
         size varchar(10)
 );
-
 alter table product auto_increment=1;
 
 create table payments(
@@ -29,7 +27,9 @@ create table payments(
     idPayment int,
     typePayment enum('Boleto','Cartão','Dois cartões'),
     limitAvailable float,
-    primary key(idClient, idPayment)
+    primary key(idClient, idPayment),
+    constraint fk_payments_client foreign key (idclient) references clients(idClient)
+        on update cascade
 );
 
 create table orders(
@@ -49,9 +49,7 @@ create table productStorage(
     storageLocation varchar(255),
     quantity int default 0
 );
-
 alter table productStorage auto_increment=1;
-
 
 create table supplier(
 	idSupplier int auto_increment primary key,
@@ -73,7 +71,6 @@ create table seller(
     constraint unique_cnpj_seller unique (CNPJ),
     constraint unique_cpf_seller unique (CPF)
 );
-
 alter table seller auto_increment=1;
 
 create table productSeller(
@@ -93,7 +90,6 @@ create table productOrder(
     primary key (idPOproduct, idPOorder),
     constraint fk_productorder_product foreign key (idPOproduct) references product(idProduct),
     constraint fk_productorder_order foreign key (idPOorder) references orders(idOrder)
-
 );
 
 create table storageLocation(
